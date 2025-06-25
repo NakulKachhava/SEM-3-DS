@@ -79,16 +79,16 @@ void deleteAtSpecifiedPosition(){
         return;
     }
     struct node *save = first, *prev = NULL;
-    if(save->info==x) { 
+    if(save->info == x) { 
         first = save->link; 
         free(save);
         return;
     }
-    while (save != null && save->info != x) { 
+    while (save != NULL && save->info != x) { 
         prev = save;
         save = save->link;
     }
-    if (save == null) { 
+    if (save == NULL) { 
         printf("Node not found");
         return;
     }
