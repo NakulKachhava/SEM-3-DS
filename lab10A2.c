@@ -21,10 +21,11 @@ void insertAtFirst(){
 
 void displayAllNodes(){
     struct node *save = first;
-    while(save->link != NULL){
-        printf("%d ", save->info);
+    while(save != NULL){
+        printf("%d -> ", save->info);
         save = save->link;
     }
+    printf("NULL\n");
     return;
 }
 
@@ -70,7 +71,46 @@ void deleteAtLast(){
 }
 
 void deleteAtSpecifiedPosition(){
+    int x;
+    printf("Enter data/info of the node which you want to delete - ");
+    scanf("%d",&x);
+    if (first == NULL) {
+        printf("Linked List is Empty"); 
+        return;
+    }
+    struct node *save = first, *prev = NULL;
+    if(save->info==x) { 
+        first = save->link; free(save);
+        return;
+    }
+    while (save != null && save->info != x) { 
+        prev = save;
+        save = save->link;
+    }
+    if (save == null) { 
+        printf("Node not found");
+        return;
+    }
+    prev->link = save->link;
+    free(save); 
+    return;
+}
 
+void countNodes(){
+    struct node *save = first;
+    int count = 0;
+    if(first = NULL){
+        printf("The total number of nodes = %d\n",count);
+        return;
+    }
+    else{
+        while(save != NULL){
+            count++;
+            save = save->link;
+        }
+        printf("The total number of nodes = %d\n",count);
+        return;
+    }
 }
 
 void main(){
@@ -83,13 +123,13 @@ void main(){
         switch(choice) {
             case 1: insertAtFirst();
             break;
-            case 2: display();
+            case 2: displayAllNodes();
             break;
-            case 3: deleteFirst();
+            case 3: deleteAtFirst();
             break;
-            case 4: insertAtEnd();
+            case 4: insertAtLast();
             break;
-            case 5: deleteLast();
+            case 5: deleteAtLast();
             break;
             case 6: deleteAtSpecifiedPosition();
             break;
