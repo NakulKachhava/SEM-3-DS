@@ -99,7 +99,7 @@ void deleteAtSpecifiedPosition(){
 void countNodes(){
     struct node *save = first;
     int count = 0;
-    if(first = NULL){
+    if(first == NULL){
         printf("The total number of nodes = %d\n",count);
         return;
     }
