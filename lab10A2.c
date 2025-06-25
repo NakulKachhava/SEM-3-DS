@@ -60,7 +60,7 @@ void insertAtLast(){
 
 void deleteAtLast(){
     struct node *save = first;
-    struct node *pred = first;
+    struct node *pred = NULL;
     while(save->link != NULL){
         pred = save;
         save = save->link;
