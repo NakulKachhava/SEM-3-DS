@@ -80,7 +80,8 @@ void deleteAtSpecifiedPosition(){
     }
     struct node *save = first, *prev = NULL;
     if(save->info==x) { 
-        first = save->link; free(save);
+        first = save->link; 
+        free(save);
         return;
     }
     while (save != null && save->info != x) { 
