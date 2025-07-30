@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
-int top = -1;
+int top;
 int stack[100];
 int max = 100;
 
@@ -42,7 +42,14 @@ void reverseStack(){
     }
 }
 
-void vowelAnxiety(char s[],int n){
+void vowelAnxiety(){
+    top = -1;
+    int n;
+    char s[100];
+    printf("Enter length of String - \n");
+    scanf("%d",&n);
+    printf("Enter a String - \n");
+    scanf("%s",s);
     for(int i = 0; i < n; i++){
         if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'){
             reverseStack();
@@ -60,13 +67,7 @@ int main(){
     printf("Enter number of inputs - ");
     scanf("%d",&inputs);
     for(int i=1 ; i <= inputs; i++){
-        int n;
-        char s[100];
-        printf("Enter length of String - \n");
-        scanf("%s",&n);
-        printf("Enter a String - \n");
-        scanf("%d",&s);
-        vowelAnxiety(s,n);
+        vowelAnxiety();
     }
     return 0;
 }
